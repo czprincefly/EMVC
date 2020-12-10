@@ -12,7 +12,7 @@ import string
 import argparse
 import json
 import sys
-sys.path.insert(0, './evaluation/')
+sys.path.insert(0, './evaluation')
 
 from pycocoevalcap.tokenizer.ptbtokenizer import PTBTokenizer
 from pycocoevalcap.bleu.bleu import Bleu
@@ -296,10 +296,4 @@ if __name__=='__main__':
                         help='reference files with ground truth captions to compare results against. delimited (,) str')
     parser.add_argument('--tious', type=float,  nargs='+', default=[0.3, 0.5, 0.7, 0.9],
                         help='Choose the tIoUs to average over.')
-    parser.add_argument('-ppv', '--max-proposals-per-video', type=int, default=1000,
-                        help='maximum propoasls per video.')
-    parser.add_argument('-v', '--verbose', action='store_true',
-                        help='Print intermediate steps.')
-    args = parser.parse_args()
-
-    main(args)
+    parser.add_argument('-ppv', '--max
